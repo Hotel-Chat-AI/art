@@ -521,11 +521,11 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
                          }
                        }}
                        className={`transition-all duration-300 hover:scale-110 ${
-                         item.isTitle || item.id === 'title'
+                         (('isTitle' in item && (item as any).isTitle) || item.id === 'title')
                            ? 'text-pink-600 font-bold cursor-default'
-                           : item.isHighlighted || 
-                             (engineeringSection === 'main' && engineeringSlide === item.id) || 
-                             (engineeringSection === 'waterproof' && engineeringSlide === item.id)
+                           : (('isHighlighted' in item && (item as any).isHighlighted) || 
+                              (engineeringSection === 'main' && engineeringSlide === item.id) || 
+                              (engineeringSection === 'waterproof' && engineeringSlide === item.id))
                              ? 'text-pink-700 font-bold bg-pink-200/50 px-2 py-1 rounded-full'
                              : 'text-pink-500 hover:text-pink-700 font-medium'
                        }`}
@@ -612,10 +612,10 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
     ];
 
     const currentSlide = insulationSlides[insulationSlide];
-    const leftWidth = 'w-4/5';
+    const leftWidth = 'w-full';
 
     return (
-      <div className="min-h-screen relative bg-white">
+      <div className="min-h-screen relative" style={{backgroundColor:'rgba(244,243,243,255)'}}>
         {renderSidebar()}
 
         {/* Navigation text buttons top-right */}
@@ -643,11 +643,11 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
             animate={{ opacity:1, x:0 }}
             exit={{ opacity:0, x:-100 }}
             transition={{ duration:0.6, ease:'easeInOut' }}
-            className="ml-16 flex h-screen justify-center"
+            className="ml-16 flex h-screen"
           >
             {/* Full image */}
-            <div className={`${leftWidth} h-full relative overflow-hidden`}>
-              <img src={currentSlide.image} alt={currentSlide.title} className="absolute inset-0 w-full h-full object-cover" />
+            <div className={`${leftWidth} h-full relative overflow-hidden ml-36`}>
+              <img src={currentSlide.image} alt={currentSlide.title} className="absolute inset-0 w-full h-full object-cover transform scale-95" />
             </div>
           </motion.div>
         </AnimatePresence>
