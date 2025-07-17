@@ -41,6 +41,16 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
       navLabel: '區域地圖',
       isFullPageImage: true,
       backgroundImage: '/frames/landmark-map.jpg'
+    },
+    {
+      id: 'future-vision-3',
+      title: 'FUTURE VISION',
+      subtitle: 'Premium Development Location',
+      description: '城市核心區域 頂級住宅地標\n建國南京交匯點 市心黃金地段',
+      content: '位於台北市精華地段，建國南京十字軸線交匯處，周邊商業機能完善，\n交通網絡四通八達，鄰近捷運站點，生活機能便利性極佳。\n結合現代建築美學與都市更新理念，打造台北市新興住宅標竿。',
+      footer: 'FUTURE VISION FOR URBAN RENEWAL',
+      navLabel: '開發詳情',
+      backgroundImage: '/025.png'
     }
   ];
 
@@ -188,6 +198,36 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
                   />
                 </motion.div>
 
+                {/* Right side dot navigation - only for map slide */}
+                <motion.div
+                  initial={{ x: 50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 z-50"
+                >
+                  {/* Current slide dot (slide 2) */}
+                  <motion.button
+                    onClick={() => setCurrentSlide(2)}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-4 h-4 rounded-full bg-white border-2 border-white shadow-lg transition-all duration-200"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1.4, type: "spring", bounce: 0.4 }}
+                  />
+                  
+                  {/* Next slide dot (slide 3) */}
+                  <motion.button
+                    onClick={() => setCurrentSlide(3)}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-4 h-4 rounded-full bg-white/40 border-2 border-white hover:bg-white/60 shadow-lg transition-all duration-200"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1.6, type: "spring", bounce: 0.4 }}
+                  />
+                </motion.div>
+
                 {/* Bottom navigation buttons */}
                 <motion.div
                   initial={{ y: 100, opacity: 0 }}
@@ -217,7 +257,7 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
                         : 'text-white/80 hover:text-white hover:bg-white/10 rounded-full border border-white/20'
                     }`}
                   >
-                    體驗文化園區
+                    啤酒文化園區
                   </motion.button>
                   <motion.button
                     onClick={() => setCurrentSlide(2)}
@@ -229,7 +269,7 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
                         : 'text-white/80 hover:text-white hover:bg-white/10 rounded-full border border-white/20'
                     }`}
                   >
-                    營業詢價
+                    區域地圖
                   </motion.button>
                 </motion.div>
               </motion.div>
@@ -376,8 +416,16 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
                   {/* Slide images */}
                   <div className="absolute inset-0">
                     <img 
-                      src={currentSlide === 0 ? '/020.png' : '/021.png'}
-                      alt={currentSlide === 0 ? 'Future Vision Image 1' : 'Future Vision Image 2'}
+                      src={
+                        currentSlide === 0 ? '/020.png' :
+                        currentSlide === 1 ? '/021.png' :
+                        '/025.png'
+                      }
+                      alt={
+                        currentSlide === 0 ? 'Future Vision Image 1' :
+                        currentSlide === 1 ? 'Future Vision Image 2' :
+                        'Development Details Image'
+                      }
                       className="w-full h-full object-cover"
                     />
                   </div>

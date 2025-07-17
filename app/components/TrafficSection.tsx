@@ -564,7 +564,11 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
                   ease: "easeInOut"
                 }}
                 className="absolute top-0 bottom-0"
-                style={{ left: '76.25%', width: '6px', backgroundColor: 'rgba(128,81,41,1)' }}
+                style={{ 
+                  left: 'calc(76.25% - 0.25vw)', 
+                  width: 'max(6px, 0.4vw)', 
+                  backgroundColor: 'rgba(128,81,41,1)' 
+                }}
               />
               
               {/* Horizontal Green Pulsing Line */}
@@ -578,7 +582,11 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
                   ease: "easeInOut"
                 }}
                 className="absolute left-0 right-0 bg-green-500"
-                style={{ top: '23.4%', height: '6px', backgroundColor: 'rgba(7,137,73,255)' }}
+                style={{ 
+                  top: 'calc(23.4% - 0.2vh)', 
+                  height: 'max(6px, 0.4vh)', 
+                  backgroundColor: 'rgba(7,137,73,255)' 
+                }}
               />
               
               {/* Horizontal Blue Pulsing Line */}
@@ -592,7 +600,11 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
                   ease: "easeInOut"
                 }}
                 className="absolute left-0 right-0 bg-blue-500"
-                style={{ top: '88.5%', height: '6px', backgroundColor: 'rgba(7,155,204,255)' }}
+                style={{ 
+                  top: 'calc(88.5% - 0.2vh)', 
+                  height: 'max(6px, 0.4vh)', 
+                  backgroundColor: 'rgba(7,155,204,255)' 
+                }}
               />
             </>
           )}
@@ -611,7 +623,10 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
                   ease: "easeInOut"
                 }}
                 className="absolute top-0 bottom-0"
-                style={{ left: '52%', width: '12px' }}
+                style={{ 
+                  left: 'calc(52% - 0.3vw)', 
+                  width: 'max(12px, 0.8vw)' 
+                }}
               />
             </>
           )}
@@ -630,7 +645,10 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
                   ease: "easeInOut"
                 }}
                 className="absolute left-0 right-0"
-                style={{ top: '70.5%', height: '12px' }}
+                style={{ 
+                  top: 'calc(70.5% - 0.3vh)', 
+                  height: 'max(12px, 0.8vh)' 
+                }}
               />
             </>
           )}
@@ -683,10 +701,10 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
                 }}
                 className="absolute"
                 style={{ 
-                  left: '86.7%', 
-                  top: '3%', 
-                  width: '132px', 
-                  height: '40px'
+                  left: 'calc(86.7% - 0.5vw)', 
+                  top: 'calc(3% - 0.2vh)', 
+                  width: 'max(132px, 8.5vw)', 
+                  height: 'max(40px, 2.5vh)'
                 }}
               />
             </>
