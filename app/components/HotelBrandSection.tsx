@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface HotelBrandSectionProps {
@@ -81,7 +81,6 @@ const interactiveButtons = [
 
 export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
   const [currentPage, setCurrentPage] = useState('main');
-  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
   const currentMember = teamMembers.find(member => member.id === currentPage);
 
@@ -241,8 +240,6 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
             }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setCurrentPage(member.id)}
-            onMouseEnter={() => setHoveredButton(member.id)}
-            onMouseLeave={() => setHoveredButton(null)}
             className="absolute text-center cursor-pointer z-50"
             style={{
               ...button.position,
@@ -349,7 +346,7 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
               className="border-l-4 border-white/50 pl-5"
             >
               <p className="text-base italic leading-relaxed text-white/70">
-                "{currentMember.philosophy}"
+                &ldquo;{currentMember.philosophy}&rdquo;
               </p>
             </motion.div>
           </motion.div>
@@ -391,7 +388,7 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
           className="absolute bottom-32 left-24 right-8"
         >
           <div className="flex items-center justify-start py-3 gap-3">
-            {teamMembers.filter(member => !member.isMain).map((member, index) => (
+            {teamMembers.filter(member => !member.isMain).map((member) => (
               <motion.button
                 key={member.id}
                 onClick={() => setCurrentPage(member.id)}

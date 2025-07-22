@@ -27,12 +27,16 @@ export default function Home() {
     }, 800);
   };
 
+  const handleNavigate = (section: string) => {
+    setCurrentSection(section as Section);
+  };
+
   const renderSection = () => {
     switch (currentSection) {
       case 'animated-intro':
         return <AnimatedIntro onComplete={handleAnimatedIntroComplete} isTransitioning={isTransitioning} />;
       case 'menu':
-        return <MainMenu onNavigate={setCurrentSection} />;
+        return <MainMenu onNavigate={handleNavigate} />;
       case 'andou':
         return <AndouTadaoSection onBack={() => setCurrentSection('menu')} />;
       case 'landmark':
@@ -64,7 +68,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="absolute inset-0 z-10"
             >
-              <MainMenu onNavigate={setCurrentSection} />
+              <MainMenu onNavigate={handleNavigate} />
             </motion.div>
           )}
         </>

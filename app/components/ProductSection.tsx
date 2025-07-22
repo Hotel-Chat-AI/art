@@ -19,16 +19,12 @@ const floorPlans = [
   { id: 'b3f', name: 'B3F' },
 ];
 
-const subMenuOptions = [
-  { id: 'architecture', name: 'ARCHITECTURE', icon: '🏗️' },
-  { id: 'floorplan', name: 'FLOOR PLAN', icon: '📐' }
-];
-
 export default function ProductSection({ onBack }: ProductSectionProps) {
-  const [currentView, setCurrentView] = useState<'main' | 'architecture' | 'floorplan'>('main');
+  const [currentView, setCurrentView] = useState<'main' | 'architecture' | 'floorplan' | 'map'>('main');
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   const [currentSection, setCurrentSection] = useState(0);
-  const [selectedFloor, setSelectedFloor] = useState<string>('main');
+  const [selectedFloor, setSelectedFloor] = useState<string>('1f');
+  const [currentMapImage, setCurrentMapImage] = useState<string>('map1.png');
 
   const handleArchitectureClick = () => {
     setCurrentView('architecture');
@@ -37,16 +33,17 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
 
   const handleFloorPlanClick = () => {
     setCurrentView('floorplan');
-  };
-
-  const handleClose = () => {
-    setCurrentView('main');
-    setCurrentSection(0); // Reset to first section when closing
+    setSelectedFloor('1f'); // Ensure it starts with 1F
   };
 
   const handleLightShow = () => {
     // This will be implemented later when you provide details
     console.log('Light show clicked');
+  };
+
+  const handleMapClick = (imageName: string) => {
+    setCurrentMapImage(imageName);
+    setCurrentView('map');
   };
 
   if (currentView === 'main') {
@@ -664,8 +661,104 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
     );
   }
 
+  // Full screen map view
+  if (currentView === 'map') {
+    // Car image page
+    if (currentMapImage === 'car.png') {
+      return (
+        <div 
+          className="min-h-screen relative overflow-hidden bg-black cursor-pointer flex items-start justify-center pt-20"
+          onClick={() => setCurrentView('floorplan')}
+        >
+          <motion.img
+            src="/car.png"
+            alt="Car Image"
+            className="max-w-4xl max-h-[80vh] object-contain"
+            initial={{ opacity: 0, scale: 1.9 }}
+            animate={{ opacity: 1, scale: 2 }}
+            transition={{ duration: 0.5 }}
+          />
+        </div>
+      );
+    }
+
+    // Lamp image page
+    if (currentMapImage === 'lamp.png') {
+      return (
+        <div 
+          className="min-h-screen relative overflow-hidden bg-black cursor-pointer flex items-center justify-center pt-20"
+          onClick={() => setCurrentView('floorplan')}
+        >
+          <motion.img
+            src="/lamp.png"
+            alt="Lamp Image"
+            className="max-w-4xl max-h-[80vh] object-contain"
+            initial={{ opacity: 0, scale: 1.9 }}
+            animate={{ opacity: 1, scale: 2 }}
+            transition={{ duration: 0.5 }}
+          />
+        </div>
+      );
+    }
+
+    // Sak1 image page
+    if (currentMapImage === 'sak1.png') {
+      return (
+        <div 
+          className="min-h-screen relative overflow-hidden bg-black cursor-pointer flex items-center justify-center pt-8"
+          onClick={() => setCurrentView('floorplan')}
+        >
+          <motion.img
+            src="/sak1.png"
+            alt="Sak1 Image"
+            className="max-w-4xl max-h-[85vh] object-contain"
+            initial={{ opacity: 0, scale: 1.9 }}
+            animate={{ opacity: 1, scale: 2 }}
+            transition={{ duration: 0.5 }}
+          />
+        </div>
+      );
+    }
+
+    // Last image page
+    if (currentMapImage === 'last.png') {
+      return (
+        <div 
+          className="min-h-screen relative overflow-hidden bg-black cursor-pointer flex items-center justify-center pt-40"
+          onClick={() => setCurrentView('floorplan')}
+        >
+          <motion.img
+            src="/last.png"
+            alt="Last Image"
+            className="max-w-4xl max-h-[70vh] object-contain"
+            initial={{ opacity: 0, scale: 1.9 }}
+            animate={{ opacity: 1, scale: 2 }}
+            transition={{ duration: 0.5 }}
+          />
+        </div>
+      );
+    }
+
+    // Default centered layout for all other images
+    return (
+      <div 
+        className="min-h-screen relative overflow-hidden bg-black cursor-pointer flex items-center justify-center"
+        onClick={() => setCurrentView('floorplan')}
+      >
+        <motion.img
+          src={`/${currentMapImage}`}
+          alt="Full Screen Map"
+          className="max-w-full max-h-full object-contain"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        />
+      </div>
+    );
+  }
+
   // Floor plan view layout
-  const floorScale = ['3-4f','2f'].includes(selectedFloor) ? 0.85 : 1;
+  const floorScale = ['3-4f','2f'].includes(selectedFloor) ? 1.15 : 1;
   const objectClass = ['3-4f','2f'].includes(selectedFloor) ? 'object-contain' : 'object-cover';
   return (
     <div className="min-h-screen relative overflow-hidden bg-white">
@@ -722,7 +815,20 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
             <button
               key={plan.id}
               onClick={() => setSelectedFloor(plan.id)}
-              className={`text-lg font-medium tracking-widest border-b pb-1 w-24 text-center transition-colors ${selectedFloor===plan.id? 'text-pink-600 border-pink-500':'text-gray-700 border-gray-400 hover:text-pink-500'}`}
+              className={`text-lg font-medium tracking-widest border-b pb-1 w-24 text-center transition-colors ${selectedFloor===plan.id? 'border-[rgba(250,165,164,255)]':'text-gray-700 border-gray-400'}`}
+              style={{
+                color: selectedFloor === plan.id ? 'rgba(250,165,164,255)' : undefined
+              }}
+              onMouseEnter={(e) => {
+                if (selectedFloor !== plan.id) {
+                  e.currentTarget.style.color = 'rgba(250,165,164,255)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (selectedFloor !== plan.id) {
+                  e.currentTarget.style.color = '';
+                }
+              }}
             >
               {plan.name}
             </button>
@@ -753,6 +859,146 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
               transition={{ duration: 0.5, ease: 'easeInOut' }}
             />
           </AnimatePresence>
+          
+          {/* Pink dot for R1F floor plan */}
+          {selectedFloor === 'r1f' && (
+            <motion.button
+              onClick={() => handleMapClick('map1.png')}
+              className="absolute rounded-full hover:scale-125 transition-all duration-200 shadow-lg z-10"
+              style={{
+                top: '60%',
+                left: '22%',
+                transform: 'translate(-50%, -50%)',
+                width: 'max(6px, min(0.8vw, 12px))',
+                height: 'max(6px, min(0.8vw, 12px))',
+                backgroundColor: 'rgba(250,165,164,255)'
+              }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
+              whileHover={{ scale: 1.25 }}
+              whileTap={{ scale: 0.9 }}
+            />
+          )}
+          
+          {/* A1-A5 unit buttons and small dot for apartment floors */}
+          <AnimatePresence>
+            {(['13f', '12f', '3-4f', '2f'].includes(selectedFloor)) && (
+              <motion.div
+                key={selectedFloor}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.button
+                  onClick={() => handleMapClick('floor2.png')}
+                  className="absolute rounded-full hover:scale-125 transition-all duration-200 shadow-lg z-10"
+                  style={{
+                    top: '50%',
+                    left: '72%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 'max(6px, min(0.8vw, 12px))',
+                    height: 'max(6px, min(0.8vw, 12px))',
+                    backgroundColor: 'rgba(250,165,164,255)'
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                  whileHover={{ scale: 1.25 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+                
+                {/* Big circles for A1-A5 units */}
+                {[
+                  { id: 'A1', top: '60%', left: '61%', image: 'a1.png' },
+                  { id: 'A2', top: '60%', left: '42%', image: 'a2.png' },
+                  { id: 'A3', top: '60%', left: '27%', image: 'a3.png' },
+                  { id: 'A4', top: '40%', left: '17%', image: 'a4.png' },
+                  { id: 'A5', top: '36%', left: '42%', image: 'a5.png' }
+                ].map((unit, index) => (
+                  <motion.div
+                    key={unit.id}
+                    onClick={() => handleMapClick(unit.image)}
+                    className="absolute rounded-full border-2 border-white hover:scale-110 transition-all duration-200 shadow-lg z-10 flex items-center justify-center cursor-pointer"
+                    style={{
+                      top: unit.top,
+                      left: unit.left,
+                      transform: 'translate(-50%, -50%)',
+                      width: 'max(30px, min(3vw, 50px))',
+                      height: 'max(30px, min(3vw, 50px))',
+                      backgroundColor: 'rgba(250,165,164,255)'
+                    }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span 
+                      className="text-white font-bold text-xs"
+                      style={{ fontSize: 'max(8px, min(1vw, 14px))' }}
+                    >
+                      {unit.id}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Three small dots for 1F floor plan */}
+          {selectedFloor === '1f' && (
+            <>
+              {[
+                { id: '1', top: 'calc(45% - 25px)', left: '37%', image: 'car.png' },
+                { id: '2', top: '59%', left: '64%', image: 'lamp.png' },
+                { id: '3', top: '73%', left: '67%', image: 'sak1.png' }
+              ].map((dot, index) => (
+                <motion.button
+                  key={dot.id}
+                  onClick={() => handleMapClick(dot.image)}
+                  className="absolute rounded-full hover:scale-125 transition-all duration-200 shadow-lg z-10"
+                  style={{
+                    top: dot.top,
+                    left: dot.left,
+                    transform: 'translate(-50%, -50%)',
+                    width: 'max(8px, min(1vw, 15px))',
+                    height: 'max(8px, min(1vw, 15px))',
+                    backgroundColor: 'rgba(250,165,164,255)'
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.5 + index * 0.2 }}
+                  whileHover={{ scale: 1.25 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              ))}
+            </>
+          )}
+
+          {/* Small pink dot for B1F floor plan */}
+          {selectedFloor === 'b1f' && (
+            <motion.button
+              onClick={() => handleMapClick('last.png')}
+              className="absolute rounded-full hover:scale-125 transition-all duration-200 shadow-lg z-10"
+              style={{
+                top: '77%',
+                left: '61%',
+                transform: 'translate(-50%, -50%)',
+                width: 'max(6px, min(0.8vw, 12px))',
+                height: 'max(6px, min(0.8vw, 12px))',
+                backgroundColor: 'rgba(250,165,164,255)'
+              }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
+              whileHover={{ scale: 1.25 }}
+              whileTap={{ scale: 0.9 }}
+            />
+          )}
         </div>
       </div>
     </div>

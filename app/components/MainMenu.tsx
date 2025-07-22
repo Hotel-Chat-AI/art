@@ -392,7 +392,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
       >
 
         <div className="space-y-8 mt-4">
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <button
               key={item.id}
               onMouseEnter={() => setHoveredItem(item.id)}

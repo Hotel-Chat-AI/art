@@ -516,7 +516,7 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
                       {/* Navigation buttons with modern styling - positioned lower */}
                       <div className="flex justify-center gap-6 mt-12">
                         <motion.button
-                          onClick={() => setCurrentSlide(0)}
+                        onClick={() => setCurrentSlide(0 as SlideIndex)}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className={`px-5 py-3 text-base font-medium transition-all duration-200 backdrop-blur-sm ${
@@ -528,7 +528,7 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
                           藏富恆美
                         </motion.button>
                         <motion.button
-                          onClick={() => setCurrentSlide(1)}
+                        onClick={() => setCurrentSlide(1 as SlideIndex)}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className={`px-5 py-3 text-base font-medium transition-all duration-200 backdrop-blur-sm ${
@@ -540,11 +540,11 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
                           豪宅大道
                         </motion.button>
                         <motion.button
-                          onClick={() => setCurrentSlide(2)}
+                        onClick={() => setCurrentSlide(2 as SlideIndex)}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className={`px-5 py-3 text-base font-medium transition-all duration-200 backdrop-blur-sm ${
-                            currentSlide === 2
+                          (currentSlide as SlideIndex) === 2
                               ? 'text-white bg-white/20 rounded-full border border-white/30'
                               : 'text-white/80 hover:text-white hover:bg-white/10 rounded-full border border-white/20'
                           }`}

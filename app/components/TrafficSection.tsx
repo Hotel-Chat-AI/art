@@ -59,11 +59,6 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
   const [showXinshengPage, setShowXinshengPage] = useState(false);
   const [showAirportPage, setShowAirportPage] = useState(false);
 
-  const handleTransportClick = (transportId: string) => {
-    setSelectedTransport(transportId);
-    setShowOverlay(true);
-  };
-
   const closeOverlay = () => {
     setShowOverlay(false);
     setTimeout(() => setSelectedTransport(null), 300);
@@ -295,7 +290,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
         <div className="ml-16 h-screen relative cursor-pointer" onClick={() => setShowAirportPage(false)}>
           {/* Background Image */}
           <img
-            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+            src="/water.jpg"
             alt="Airport Scene"
             className="w-full h-full object-cover"
           />

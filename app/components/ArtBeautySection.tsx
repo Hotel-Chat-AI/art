@@ -7,6 +7,14 @@ interface ArtBeautySectionProps {
   onBack: () => void;
 }
 
+interface EngineeringNavItem {
+  id: string;
+  text: string;
+  chinese?: string;
+  isTitle?: boolean;
+  isHighlighted?: boolean;
+}
+
 const categories = [
   {
     id: 'engineering',
@@ -56,7 +64,7 @@ const categories = [
 ];
 
 // Engineering section navigation and content
-const engineeringNav1 = [
+const engineeringNav1: EngineeringNavItem[] = [
   { id: 'title', text: '結構工學', isTitle: true },
   { id: 'structure', text: '傳世結構', chinese: '耐震建築基盤 安全結構堡壘' },
   { id: 'rebar', text: '堅實鋼筋', chinese: '鋼筋綁紮工法 專注營造細節' },
@@ -65,7 +73,7 @@ const engineeringNav1 = [
   { id: 'waterproof', text: '防水保固', chinese: '外牆層間防水5年保固' }
 ];
 
-const engineeringNav2 = [
+const engineeringNav2: EngineeringNavItem[] = [
   { id: 'back-to-main', text: '結構工學' },
   { id: 'waterproof-guarantee', text: '防水保固', chinese: '外牆防水 / 窗框防水 / 浴室防水 / 屋頂防水', isHighlighted: true },
   { id: 'exterior-waterproof', text: '外牆防水' },
@@ -256,138 +264,138 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
           <>
             {/* Top Row */}
             <motion.div
-              className="absolute top-4 left-24 text-4xl"
+              className="absolute top-4 left-24 w-16 h-16"
               initial={{ opacity: 0, scale: 0, rotate: -20 }}
               animate={{ opacity: 0.7, scale: 1, rotate: 0 }}
               transition={{ duration: 1, delay: 2 }}
             >
-              🌸
+              <img src="/1.png" alt="" className="w-full h-full object-contain opacity-80" />
             </motion.div>
             <motion.div
-              className="absolute top-8 left-40 text-2xl"
+              className="absolute top-8 left-40 w-10 h-10"
               initial={{ opacity: 0, scale: 0, rotate: 15 }}
               animate={{ opacity: 0.6, scale: 1, rotate: 5 }}
               transition={{ duration: 1, delay: 2.3 }}
             >
-              🌺
+              <img src="/2.png" alt="" className="w-full h-full object-contain opacity-70" />
             </motion.div>
             <motion.div
-              className="absolute top-6 left-56 text-3xl"
+              className="absolute top-6 left-56 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: -25 }}
               animate={{ opacity: 0.5, scale: 1, rotate: -10 }}
               transition={{ duration: 1, delay: 2.6 }}
             >
-              🌻
+              <img src="/3.png" alt="" className="w-full h-full object-contain opacity-60" />
             </motion.div>
 
             <motion.div
-              className="absolute top-8 right-8 text-3xl"
+              className="absolute top-8 right-8 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: 25 }}
               animate={{ opacity: 0.8, scale: 1, rotate: 10 }}
               transition={{ duration: 1, delay: 2.1 }}
             >
-              🌸
+              <img src="/4.png" alt="" className="w-full h-full object-contain opacity-75" />
             </motion.div>
             <motion.div
-              className="absolute top-4 right-24 text-2xl"
+              className="absolute top-4 right-24 w-10 h-10"
               initial={{ opacity: 0, scale: 0, rotate: -15 }}
               animate={{ opacity: 0.5, scale: 1, rotate: -5 }}
               transition={{ duration: 1, delay: 2.4 }}
             >
-              🌹
+              <img src="/5.png" alt="" className="w-full h-full object-contain opacity-60" />
             </motion.div>
             <motion.div
-              className="absolute top-12 right-40 text-3xl"
+              className="absolute top-12 right-40 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: 30 }}
               animate={{ opacity: 0.6, scale: 1, rotate: 15 }}
               transition={{ duration: 1, delay: 2.7 }}
             >
-              🌺
+              <img src="/6.png" alt="" className="w-full h-full object-contain opacity-70" />
             </motion.div>
 
             {/* Bottom Row */}
             <motion.div
-              className="absolute bottom-8 left-26 text-3xl"
+              className="absolute bottom-8 left-26 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: 30 }}
               animate={{ opacity: 0.6, scale: 1, rotate: 15 }}
               transition={{ duration: 1, delay: 2.2 }}
             >
-              🌻
+              <img src="/7.png" alt="" className="w-full h-full object-contain opacity-65" />
             </motion.div>
             <motion.div
-              className="absolute bottom-4 left-44 text-2xl"
+              className="absolute bottom-4 left-44 w-10 h-10"
               initial={{ opacity: 0, scale: 0, rotate: -25 }}
               animate={{ opacity: 0.7, scale: 1, rotate: -10 }}
               transition={{ duration: 1, delay: 2.5 }}
             >
-              🌸
+              <img src="/1.png" alt="" className="w-full h-full object-contain opacity-80" />
             </motion.div>
             <motion.div
-              className="absolute bottom-12 left-60 text-3xl"
+              className="absolute bottom-12 left-60 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: 20 }}
               animate={{ opacity: 0.5, scale: 1, rotate: 8 }}
               transition={{ duration: 1, delay: 2.8 }}
             >
-              🌹
+              <img src="/2.png" alt="" className="w-full h-full object-contain opacity-60" />
             </motion.div>
 
             <motion.div
-              className="absolute bottom-6 right-8 text-4xl"
+              className="absolute bottom-6 right-8 w-16 h-16"
               initial={{ opacity: 0, scale: 0, rotate: 20 }}
               animate={{ opacity: 0.8, scale: 1, rotate: 5 }}
               transition={{ duration: 1, delay: 2.1 }}
             >
-              🌺
+              <img src="/3.png" alt="" className="w-full h-full object-contain opacity-80" />
             </motion.div>
             <motion.div
-              className="absolute bottom-12 right-24 text-2xl"
+              className="absolute bottom-12 right-24 w-10 h-10"
               initial={{ opacity: 0, scale: 0, rotate: -30 }}
               animate={{ opacity: 0.5, scale: 1, rotate: -15 }}
               transition={{ duration: 1, delay: 2.6 }}
             >
-              🌸
+              <img src="/4.png" alt="" className="w-full h-full object-contain opacity-60" />
             </motion.div>
             <motion.div
-              className="absolute bottom-4 right-40 text-3xl"
+              className="absolute bottom-4 right-40 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: 35 }}
               animate={{ opacity: 0.6, scale: 1, rotate: 18 }}
               transition={{ duration: 1, delay: 2.9 }}
             >
-              🌻
+              <img src="/5.png" alt="" className="w-full h-full object-contain opacity-70" />
             </motion.div>
 
             {/* Side decorations */}
             <motion.div
-              className="absolute top-1/4 left-20 text-2xl"
+              className="absolute top-1/4 left-20 w-8 h-8"
               initial={{ opacity: 0, scale: 0, rotate: 45 }}
               animate={{ opacity: 0.4, scale: 1, rotate: 20 }}
               transition={{ duration: 1, delay: 2.7 }}
             >
-              🌸
+              <img src="/6.png" alt="" className="w-full h-full object-contain opacity-50" />
             </motion.div>
             <motion.div
-              className="absolute top-1/3 left-24 text-3xl"
+              className="absolute top-1/3 left-24 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: -40 }}
               animate={{ opacity: 0.5, scale: 1, rotate: -18 }}
               transition={{ duration: 1, delay: 3.0 }}
             >
-              🌺
+              <img src="/7.png" alt="" className="w-full h-full object-contain opacity-65" />
             </motion.div>
             <motion.div
-              className="absolute top-2/3 right-20 text-2xl"
+              className="absolute top-2/3 right-20 w-8 h-8"
               initial={{ opacity: 0, scale: 0, rotate: 50 }}
               animate={{ opacity: 0.4, scale: 1, rotate: 25 }}
               transition={{ duration: 1, delay: 3.2 }}
             >
-              🌹
+              <img src="/1.png" alt="" className="w-full h-full object-contain opacity-40" />
             </motion.div>
             <motion.div
-              className="absolute top-1/2 right-16 text-3xl"
+              className="absolute top-1/2 right-16 w-12 h-12"
               initial={{ opacity: 0, scale: 0, rotate: -35 }}
               animate={{ opacity: 0.6, scale: 1, rotate: -16 }}
               transition={{ duration: 1, delay: 2.8 }}
             >
-              🌻
+              <img src="/2.png" alt="" className="w-full h-full object-contain opacity-70" />
             </motion.div>
           </>
 
@@ -417,14 +425,16 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
-              whileHover={{ scale: 1.3, rotateY: 10 }}
+              whileHover={{ scale: 1.3, rotateY: 10, transition: { duration: 0.1 } }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setSelectedCategory(category.id)}
-              className="absolute p-6 transition-all duration-500 hover:drop-shadow-2xl bg-white/10 hover:bg-white/20 rounded-xl backdrop-blur-sm border border-white/20"
+              className="absolute p-6 transition-all duration-100 hover:drop-shadow-2xl rounded-xl backdrop-blur-sm"
               style={{
                 left: category.position.left,
                 top: category.position.top,
-                zIndex: 20
+                zIndex: 20,
+                backgroundColor: 'transparent',
+                border: 'none'
               }}
             >
               <div className="text-center">
@@ -559,9 +569,9 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
                       }
                     }}
                     className={`transition-all duration-300 hover:scale-110 ${
-                      (('isTitle' in item && (item as any).isTitle) || item.id === 'title')
+                      (('isTitle' in item && item.isTitle) || item.id === 'title')
                         ? 'text-pink-400 font-bold cursor-default'
-                        : (('isHighlighted' in item && (item as any).isHighlighted) || 
+                        : (('isHighlighted' in item && item.isHighlighted) || 
                            (engineeringSection === 'main' && engineeringSlide === item.id) || 
                            (engineeringSection === 'waterproof' && engineeringSlide === item.id))
                           ? 'text-pink-500 font-bold bg-pink-100/50 px-2 py-1 rounded-full'
@@ -997,9 +1007,9 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
         <AnimatePresence mode="wait">
           <motion.div
             key={materialsSlide}
-            initial={{ opacity:0, x:100 }}
-            animate={{ opacity:1, x:0 }}
-            exit={{ opacity:0, x:-100 }}
+            initial={{ opacity:0 }}
+            animate={{ opacity:1 }}
+            exit={{ opacity:0 }}
             transition={{ duration:0.6, ease:'easeInOut' }}
             className="ml-16 flex h-screen"
           >
@@ -1012,7 +1022,9 @@ export default function ArtBeautySection({ onBack }: ArtBeautySectionProps) {
                    className={`absolute inset-0 w-full h-full object-cover ${
                      materialsSlide === 0 || materialsSlide === 2 
                        ? 'transform translate-x-[30px]' 
-                       : ''
+                       : materialsSlide === 6
+                         ? 'transform translate-x-[-10px] translate-y-[-10px]'
+                         : ''
                    }`}
                  />
                ) : (

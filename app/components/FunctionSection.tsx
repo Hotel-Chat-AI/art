@@ -92,7 +92,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/tab.png"
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -265,7 +265,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
               >
                 <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
-        <motion.div
+                      <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
                 style={{ top: '86%', left: '93.5%' }}
                 whileHover={{ scale: 1.3, backgroundColor: 'rgba(104,201,243,255)' }}
