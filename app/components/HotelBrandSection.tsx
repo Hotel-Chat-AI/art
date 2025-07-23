@@ -102,7 +102,7 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
         className="flex flex-col items-center relative z-[9999]"
       >
         <img 
-          src="/tab.png" 
+          src="/art/tab.png" 
           alt="TAB" 
           className="h-56 w-auto object-contain mb-2 relative z-[9999]"
         />
@@ -267,7 +267,7 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
         >
         <div className="relative">
           <motion.img
-            src="/art.png"
+            src="/art/art.png"
             alt="ART"
             className="object-contain"
             style={{
@@ -362,7 +362,7 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
           {/* Member image */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img 
-              src={`/${(() => {
+              src={`/art/${(() => {
                 const imageMap: { [key: string]: string } = {
                   'hotel': '50.png',
                   'architect': '051.png', 
@@ -444,3 +444,5 @@ export default function HotelBrandSection({ onBack }: HotelBrandSectionProps) {
     </div>
   );
 } 
+
+

@@ -104,7 +104,7 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
           className="flex flex-col items-center relative z-[9999]"
         >
           <img 
-            src="/tab.png" 
+            src="/art/tab.png" 
             alt="TAB" 
             className="h-56 w-auto object-contain mb-2 relative z-[9999]"
           />
@@ -163,7 +163,7 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
                 >
                   <div className="absolute inset-0">
                     <img
-                      src="/map.png"
+                      src="/art/map.png"
                       alt="Location Map"
                       className="w-full h-full object-cover"
                     />
@@ -574,7 +574,7 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
                       <AnimatePresence mode="wait">
                         <motion.img
                           key={imageIndex}
-                          src={imageIndex === 0 ? '/01.png' : '/010.png'}
+                          src={imageIndex === 0 ? './01.png' : '/010.png'}
                           alt={imageIndex === 0 ? 'Financial Centre View 1' : 'Financial Centre View 2'}
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
@@ -590,7 +590,7 @@ export default function AndouTadaoSection({ onBack }: AndouTadaoSectionProps) {
                     ) : (
                       // Second slide - Static 011.png at 150% size
                       <motion.img
-                        src="/011.png"
+                        src="/art/011.png"
                         alt="Mansion Avenue View"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

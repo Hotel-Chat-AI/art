@@ -16,15 +16,9 @@ type Section = 'animated-intro' | 'menu' | 'andou' | 'landmark' | 'traffic' | 'f
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<Section>('animated-intro');
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleAnimatedIntroComplete = () => {
-    setIsTransitioning(true);
-    // Delay the section change to allow for smooth transition
-    setTimeout(() => {
-      setCurrentSection('menu');
-      setIsTransitioning(false);
-    }, 800);
+    setCurrentSection('menu');
   };
 
   const handleNavigate = (section: string) => {
@@ -34,7 +28,7 @@ export default function Home() {
   const renderSection = () => {
     switch (currentSection) {
       case 'animated-intro':
-        return <AnimatedIntro onComplete={handleAnimatedIntroComplete} isTransitioning={isTransitioning} />;
+        return <AnimatedIntro onComplete={handleAnimatedIntroComplete} />;
       case 'menu':
         return <MainMenu onNavigate={handleNavigate} />;
       case 'andou':
@@ -52,40 +46,29 @@ export default function Home() {
       case 'art':
         return <ArtBeautySection onBack={() => setCurrentSection('menu')} />;
       default:
-        return <AnimatedIntro onComplete={handleAnimatedIntroComplete} isTransitioning={isTransitioning} />;
+        return <AnimatedIntro onComplete={handleAnimatedIntroComplete} />;
     }
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden">
-      {currentSection === 'animated-intro' || isTransitioning ? (
-        <>
-          <AnimatedIntro onComplete={handleAnimatedIntroComplete} isTransitioning={isTransitioning} />
-          {isTransitioning && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute inset-0 z-10"
-            >
-              <MainMenu onNavigate={handleNavigate} />
-            </motion.div>
-          )}
-        </>
-      ) : (
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSection}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            {renderSection()}
-          </motion.div>
-        </AnimatePresence>
-      )}
+    <main 
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #FFB7C5 0%, #FFC0CB 25%, #FFCCCB 50%, #FFE4E1 75%, #FFF8F8 100%)'
+      }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSection}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          {renderSection()}
+        </motion.div>
+      </AnimatePresence>
     </main>
   );
 }

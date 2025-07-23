@@ -50,7 +50,7 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
       content: '位於台北市精華地段，建國南京十字軸線交匯處，周邊商業機能完善，\n交通網絡四通八達，鄰近捷運站點，生活機能便利性極佳。\n結合現代建築美學與都市更新理念，打造台北市新興住宅標竿。',
       footer: 'FUTURE VISION FOR URBAN RENEWAL',
       navLabel: '開發詳情',
-      backgroundImage: '/025.png'
+      backgroundImage: '/art/025.png'
     }
   ];
 
@@ -83,7 +83,7 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
           className="flex flex-col items-center relative z-[9999]"
         >
           <img 
-            src="/tab.png" 
+            src="/art/tab.png" 
             alt="TAB" 
             className="h-56 w-auto object-contain mb-2 relative z-[9999]"
           />
@@ -192,7 +192,7 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
                   style={{ height: '30vh' }}
                 >
                   <img 
-                    src="/022.png" 
+                    src="/art/022.png" 
                     alt="Landmark map"
                     className="absolute bottom-0 left-1/2 transform -translate-x-1/2 scale-110 h-full w-auto object-contain min-w-full ml-[20px]"
                   />
@@ -417,9 +417,9 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
                   <div className="absolute inset-0">
                     <img 
                       src={
-                        currentSlide === 0 ? '/020.png' :
-                        currentSlide === 1 ? '/021.png' :
-                        '/025.png'
+                        currentSlide === 0 ? '/art/020.png' :
+                        currentSlide === 1 ? '/art/021.png' :
+                        '/art/025.png'
                       }
                       alt={
                         currentSlide === 0 ? 'Future Vision Image 1' :
@@ -440,3 +440,5 @@ export default function LandmarkSection({ onBack }: LandmarkSectionProps) {
     </div>
   );
 } 
+
+

@@ -20,7 +20,7 @@ const floorPlans = [
 ];
 
 export default function ProductSection({ onBack }: ProductSectionProps) {
-  const [currentView, setCurrentView] = useState<'main' | 'architecture' | 'floorplan' | 'map'>('main');
+  const [currentView, setCurrentView] = useState<'main' | 'architecture' | 'floorplan' | 'map' | 'video'>('main');
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   const [currentSection, setCurrentSection] = useState(0);
   const [selectedFloor, setSelectedFloor] = useState<string>('1f');
@@ -242,7 +242,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
         >
           <div className="relative">
             <img 
-              src="/art.png" 
+              src="/art/art.png" 
               alt="ART" 
               className="object-contain"
               style={{
@@ -326,26 +326,13 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           className="absolute top-20 left-1/2 transform -translate-x-1/2 z-20"
         >
           <img 
-            src="/logo.png" 
+            src="/art/logo.png" 
             alt="HOME & HOTEL 立詠建設" 
             className="h-32 w-auto object-contain filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300"
           />
         </motion.div>
 
-        {/* Blue Navigation Button - Bottom Right */}
-        <motion.button
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3 }}
-          className="absolute bottom-6 right-6 z-40"
-        >
-          <div className="bg-blue-500 hover:bg-blue-600 rounded-lg px-4 py-2 flex items-center space-x-2 text-white transition-all duration-300 shadow-lg">
-            <span className="text-sm">了解更多</span>
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-        </motion.button>
+
       </div>
     );
   }
@@ -394,7 +381,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/art/tab.png" 
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -464,7 +451,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
               <div className="relative w-full h-full">
                 {/* Full background image */}
                 <img
-                  src="/060.png"
+                  src="/art/060.png"
                   alt="Architecture Day View"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -514,60 +501,65 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
 
           {/* Section 2: Text on Left, Image on Right */}
           {currentSection === 1 && (
-            <>
-              {/* Left - Text */}
-              <div className="w-2/5 flex items-center justify-center pl-8 pr-2 ml-4">
-                <motion.div
-                  key={currentSection}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className={`${sections[currentSection].textColor} max-w-lg translate-x-4`}
-                >
-                  <motion.h1
-                    className="text-5xl font-black mb-4"
-                    style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
+            <div 
+              className="w-full h-full relative"
+              style={{ backgroundColor: 'rgba(251,184,170,255)' }}
+            >
+              <div className="flex w-full h-full">
+                {/* Left - Text */}
+                <div className="w-2/5 flex items-center justify-center pl-8 pr-2 ml-4">
+                  <motion.div
+                    key={currentSection}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className={`${sections[currentSection].textColor} max-w-lg translate-x-4`}
                   >
-                    Timeless ART
-                  </motion.h1>
-                  <motion.h2
-                    className="text-4xl font-light mb-6"
-                    style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
-                  >
-                    Boutique Architecture
-                  </motion.h2>
-                  
-                  <motion.h3
-                    className="text-2xl font-medium mb-8"
-                    style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
-                  >
-                    當代建築經典 輕奢精品寓所
-                  </motion.h3>
+                    <motion.h1
+                      className="text-5xl font-black mb-4"
+                      style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
+                    >
+                      Timeless ART
+                    </motion.h1>
+                    <motion.h2
+                      className="text-4xl font-light mb-6"
+                      style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
+                    >
+                      Boutique Architecture
+                    </motion.h2>
+                    
+                    <motion.h3
+                      className="text-2xl font-medium mb-8"
+                      style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
+                    >
+                      當代建築經典 輕奢精品寓所
+                    </motion.h3>
 
-                  <motion.p
-                    className="text-lg leading-relaxed"
-                    style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}
-                  >
-                    師法精品美學語彙，浪花白花崗岩定調優雅風範，
-                    石材巧妙分割締造勻稱比例，
-                    混合木紋鋁格柵，形塑立面豐富表情，簡約洗練，能為歲月久看。
-                  </motion.p>
-                </motion.div>
+                    <motion.p
+                      className="text-lg leading-relaxed"
+                      style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}
+                    >
+                      師法精品美學語彙，浪花白花崗岩定調優雅風範，
+                      石材巧妙分割締造勻稱比例，
+                      混合木紋鋁格柵，形塑立面豐富表情，簡約洗練，能為歲月久看。
+                    </motion.p>
+                  </motion.div>
+                </div>
+
+                {/* Right - Main image */}
+                <div className="w-3/5 relative h-full overflow-hidden">
+                  <motion.img
+                    key={currentSection}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    src="/art/061.png"
+                    alt="Split View Architecture"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              
-              {/* Right - Image (full height) */}
-              <div className="w-3/5 relative h-full overflow-hidden">
-                <motion.img
-                  key={currentSection}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  src="/061.png"
-                  alt="Split View Architecture"
-                  className="absolute inset-0 w-full h-full object-cover translate-x-16"
-                />
-              </div>
-            </>
+            </div>
           )}
 
           {/* Section 3: Text Centered with Background Image */}
@@ -581,7 +573,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
                 transition={{ duration: 0.8 }}
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: 'url("/062.png")',
+                  backgroundImage: 'url("/art/062.png")',
                   backgroundColor: '#1a237e'
                 }}
               >
@@ -632,7 +624,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    onClick={handleLightShow}
+                    onClick={() => setCurrentView('video')}
                     className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg text-lg"
                   >
                     燈光展演
@@ -643,20 +635,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           )}
         </div>
 
-        {/* Blue Navigation Button - Bottom Right */}
-        <motion.button
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-6 right-6 z-40"
-        >
-          <div className="bg-blue-500 hover:bg-blue-600 rounded-lg px-4 py-2 flex items-center space-x-2 text-white transition-all duration-300 shadow-lg">
-            <span className="text-sm">了解更多</span>
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-        </motion.button>
+
       </div>
     );
   }
@@ -671,7 +650,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           onClick={() => setCurrentView('floorplan')}
         >
           <motion.img
-            src="/car.png"
+            src="/art/car.png"
             alt="Car Image"
             className="max-w-4xl max-h-[80vh] object-contain"
             initial={{ opacity: 0, scale: 1.9 }}
@@ -690,7 +669,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           onClick={() => setCurrentView('floorplan')}
         >
           <motion.img
-            src="/lamp.png"
+            src="/art/lamp.png"
             alt="Lamp Image"
             className="max-w-4xl max-h-[80vh] object-contain"
             initial={{ opacity: 0, scale: 1.9 }}
@@ -709,7 +688,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           onClick={() => setCurrentView('floorplan')}
         >
           <motion.img
-            src="/sak1.png"
+            src="/art/sak1.png"
             alt="Sak1 Image"
             className="max-w-4xl max-h-[85vh] object-contain"
             initial={{ opacity: 0, scale: 1.9 }}
@@ -728,7 +707,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           onClick={() => setCurrentView('floorplan')}
         >
           <motion.img
-            src="/last.png"
+            src="/art/last.png"
             alt="Last Image"
             className="max-w-4xl max-h-[70vh] object-contain"
             initial={{ opacity: 0, scale: 1.9 }}
@@ -757,6 +736,55 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
     );
   }
 
+  // Add new state for video view
+  if (currentView === 'video') {
+    return (
+      <div className="min-h-screen bg-black relative flex items-center justify-center">
+        {/* Back button */}
+        <motion.button
+          onClick={() => setCurrentView('architecture')}
+          className="absolute top-8 left-8 z-50 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </motion.button>
+
+        {/* Video player */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl w-full px-8"
+        >
+          {/* Update video source and size */}
+          <video
+            controls
+            autoPlay
+            className="w-full h-auto rounded-lg shadow-2xl"
+            style={{ maxHeight: '88vh', transform: 'scale(1.1)' }}
+          >
+            <source src="/art/lightning.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Video title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-6"
+          >
+            <h2 className="text-2xl font-bold text-white mb-2">燈光展演</h2>
+            <p className="text-white/70">建築燈光展示影片</p>
+          </motion.div>
+        </motion.div>
+      </div>
+    );
+  }
+
   // Floor plan view layout
   const floorScale = ['3-4f','2f'].includes(selectedFloor) ? 1.15 : 1;
   const objectClass = ['3-4f','2f'].includes(selectedFloor) ? 'object-contain' : 'object-cover';
@@ -778,7 +806,7 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
           transition={{ delay: 0.6 }}
           className="flex flex-col items-center"
         >
-          <img src="/tab.png" alt="TAB" className="h-56 w-auto object-contain mb-2" />
+          <img src="/art/tab.png" alt="TAB" className="h-56 w-auto object-contain mb-2" />
           <div className="text-gray-800 text-xs font-medium text-center">藏美寓</div>
         </motion.div>
 
@@ -841,15 +869,15 @@ export default function ProductSection({ onBack }: ProductSectionProps) {
             <motion.img
               key={selectedFloor}
               src={
-                (selectedFloor === 'r1f' && '/r1f.png') ||
-                (selectedFloor === '13f' && '/13f.png') ||
-                (selectedFloor === '12f' && '/8f.png') ||
-                (selectedFloor === '3-4f' && '/4f.png') ||
-                (selectedFloor === '2f' && '/2f.png') ||
-                (selectedFloor === 'b1f' && '/b1f.png') ||
-                (selectedFloor === 'b2f' && '/b2f.png') ||
-                (selectedFloor === 'b3f' && '/b3f.png') ||
-                '/mainf.png'
+                (selectedFloor === 'r1f' && '/art/r1f.png') ||
+                (selectedFloor === '13f' && '/art/13f.png') ||
+                (selectedFloor === '12f' && '/art/8f.png') ||
+                (selectedFloor === '3-4f' && '/art/4f.png') ||
+                (selectedFloor === '2f' && '/art/2f.png') ||
+                (selectedFloor === 'b1f' && '/art/b1f.png') ||
+                (selectedFloor === 'b2f' && '/art/b2f.png') ||
+                (selectedFloor === 'b3f' && '/art/b3f.png') ||
+                '/art/mainf.png'
               }
               alt="Floor Plan"
               className={`absolute inset-0 w-full h-full ${objectClass}`}

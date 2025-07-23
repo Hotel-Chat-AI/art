@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface FunctionSectionProps {
   onBack: () => void;
@@ -48,25 +48,25 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
         return {
           title: '松江南京金融重鎮 權掌商業命脈',
           description: '南京東路二段、三段為北市指標商辦聚落，舉目皆是企業總部、頂級商辦、飯店百貨，僅僅2公里吸引了超過20家金融機構進駐。',
-          image: `/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
+          image: `/art/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
         };
       } else if (cameraId.includes('榆星散策')) {
         return {
           title: '梁記雞肉飯 飄香40年 綜藝天后激推',
           description: '梁記雞肉飯標榜道地嘉義味，綜藝天后徐熙娣小S更曾在康熙來了激推，其手撕雞肉飯加半熟荷包蛋為最愛便當之一，價格平實卻有不凡滋味。',
-          image: `/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
+          image: `/art/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
         };
       } else if (cameraId.includes('藝文綠金')) {
         return {
           title: '微風廣場堆疊精品 輝映時尚剪影',
           description: '微風廣場佔立時尚圈口浪尖20年，為台北指標精品商圈，微風名媛領銜時代連立國際品味，獨家代理多間潮流精品，微風之夜更是台灣時尚盛會。',
-          image: `/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
+          image: `/art/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
         };
       } else {
         return {
           title: '書香校園環境 學術文化薰陶',
           description: '周邊匯聚多所知名學府，從國小到大學完整教育體系，濃厚學術氛圍與文化底蘊，為下一代提供優質成長環境。',
-          image: `/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
+          image: `/art/${((cameraId.charCodeAt(cameraId.length - 1) || 0) % 8) + 1}.png`
         };
       }
     };
@@ -92,7 +92,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png"
+              src="/art/tab.png"
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -194,7 +194,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
           className="flex flex-col items-center relative z-[9999]"
         >
           <img 
-            src="/tab.png" 
+            src="/art/tab.png" 
             alt="TAB" 
             className="h-56 w-auto object-contain mb-2 relative z-[9999]"
           />
@@ -233,13 +233,19 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
       <div className="ml-16 flex h-screen">
         {/* Main Layout Image */}
         <div className="flex-1 relative">
-          <img
-            key={currentMap}
-            src={`/${currentMap}`}
-            alt="Function Layout Map"
-            className="w-full h-full object-cover"
-            style={{ transform: 'translateX(50px)' }}
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentMap}
+              src={`/art/${currentMap}`}
+              alt="Function Layout Map"
+              className="w-full h-full object-cover"
+              style={{ transform: 'translateX(50px)' }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            />
+          </AnimatePresence>
           
           {/* Camera Buttons */}
           {/* No camera buttons on initial page (map2.png) */}
@@ -254,7 +260,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('富錦商圈-1')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -263,7 +269,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('富錦商圈-2')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
                       <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -272,7 +278,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('富錦商圈-3')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
             </>
           )}
@@ -287,7 +293,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('榆星散策-1')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
             </>
           )}
@@ -302,7 +308,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('藝文綠金-1')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -311,7 +317,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('藝文綠金-2')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -320,7 +326,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('藝文綠金-3')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
                 <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -329,7 +335,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('藝文綠金-4')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
                 </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -338,7 +344,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('藝文綠金-5')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
         </motion.div>
             </>
           )}
@@ -353,7 +359,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('書香校園-1')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -362,7 +368,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('書香校園-2')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -371,7 +377,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('書香校園-3')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -380,7 +386,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('書香校園-4')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -389,7 +395,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('書香校園-5')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg"
@@ -398,7 +404,7 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
                 transition={{ duration: 0.4 }}
                 onClick={() => handleCameraClick('書香校園-6')}
               >
-                <img src="/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
+                <img src="/art/cam.png" alt="Camera" className="w-6 h-6 object-contain" />
               </motion.div>
             </>
           )}
@@ -492,3 +498,5 @@ export default function FunctionSection({ onBack }: FunctionSectionProps) {
     </div>
   );
 } 
+
+

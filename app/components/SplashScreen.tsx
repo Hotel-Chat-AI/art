@@ -60,7 +60,7 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
         transition={{ duration: 1, delay: 1.5 }}
       >
         <img 
-          src="/logo.png" 
+          src="/art/logo.png" 
           alt="HOME & HOTEL 立詠建設" 
           className="h-56 w-auto object-contain filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300 mx-auto"
         />

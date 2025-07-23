@@ -87,7 +87,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/art/tab.png" 
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -126,7 +126,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
         <div className="ml-16 h-screen relative cursor-pointer" onClick={() => setShowCivicPage(false)}>
           {/* Background Image */}
           <img
-            src="/032.png"
+            src="/art/032.png"
             alt="Civic Boulevard Night Scene"
             className="w-full h-full object-cover"
           />
@@ -169,7 +169,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/art/tab.png" 
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -208,7 +208,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
         <div className="ml-16 h-screen relative cursor-pointer" onClick={() => setShowXinshengPage(false)}>
           {/* Background Image */}
           <img
-            src="/033.png"
+            src="/art/033.png"
             alt="Xinsheng Elevated Road"
             className="w-full h-full object-cover"
           />
@@ -251,7 +251,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/art/tab.png" 
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -290,7 +290,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
         <div className="ml-16 h-screen relative cursor-pointer" onClick={() => setShowAirportPage(false)}>
           {/* Background Image */}
           <img
-            src="/water.jpg"
+            src="/art/plan.png"
             alt="Airport Scene"
             className="w-full h-full object-cover"
           />
@@ -333,7 +333,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/art/tab.png" 
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -372,7 +372,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
         <div className="ml-16 h-screen relative cursor-pointer" onClick={() => setShowJianguoPage(false)}>
           {/* Background Image */}
           <img
-            src="/031.png"
+            src="/art/031.png"
             alt="Jianguo Avenue Night Scene"
             className="w-full h-full object-cover"
           />
@@ -415,7 +415,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
             className="flex flex-col items-center relative z-[9999]"
           >
             <img 
-              src="/tab.png" 
+              src="/art/tab.png" 
               alt="TAB" 
               className="h-56 w-auto object-contain mb-2 relative z-[9999]"
             />
@@ -454,7 +454,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
         <div className="ml-16 h-screen relative cursor-pointer" onClick={() => setShowMetroPage(false)}>
           {/* Background Image */}
           <img
-            src="/030.png"
+            src="/art/030.png"
             alt="Metro Station"
             className="w-full h-full object-cover"
           />
@@ -495,7 +495,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
           className="flex flex-col items-center relative z-[9999]"
         >
           <img 
-            src="/tab.png" 
+            src="/art/tab.png" 
             alt="TAB" 
             className="h-56 w-auto object-contain mb-2 relative z-[9999]"
           />
@@ -540,7 +540,7 @@ export default function TrafficSection({ onBack }: TrafficSectionProps) {
           className="flex-1 relative"
         >
           <img
-            src="/layout.png"
+            src="/art/layout.png"
             alt="Traffic Layout Map"
             className="w-full h-full object-cover"
           />

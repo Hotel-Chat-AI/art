@@ -113,7 +113,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.7, scale: 1, rotate: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          <img src="/1.png" alt="" className="w-full h-full object-contain opacity-80" />
+          <img src="/art/1.png" alt="" className="w-full h-full object-contain opacity-80" />
         </motion.div>
         <motion.div
           className="absolute top-4 left-32 w-12 h-12"
@@ -121,7 +121,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.6, scale: 1, rotate: 5 }}
           transition={{ duration: 1, delay: 1.8 }}
         >
-          <img src="/2.png" alt="" className="w-full h-full object-contain opacity-70" />
+          <img src="/art/2.png" alt="" className="w-full h-full object-contain opacity-70" />
         </motion.div>
         <motion.div
           className="absolute top-3 left-1/2 transform -translate-x-1/2 w-10 h-10"
@@ -129,7 +129,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.5, scale: 1, rotate: -5 }}
           transition={{ duration: 1, delay: 2.1 }}
         >
-          <img src="/3.png" alt="" className="w-full h-full object-contain opacity-60" />
+          <img src="/art/3.png" alt="" className="w-full h-full object-contain opacity-60" />
         </motion.div>
         <motion.div
           className="absolute top-8 right-12 w-14 h-14"
@@ -137,7 +137,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.8, scale: 1, rotate: 10 }}
           transition={{ duration: 1, delay: 1.6 }}
         >
-          <img src="/4.png" alt="" className="w-full h-full object-contain opacity-75" />
+          <img src="/art/4.png" alt="" className="w-full h-full object-contain opacity-75" />
         </motion.div>
         <motion.div
           className="absolute top-6 right-32 w-10 h-10"
@@ -145,7 +145,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.5, scale: 1, rotate: -5 }}
           transition={{ duration: 1, delay: 1.9 }}
         >
-          <img src="/5.png" alt="" className="w-full h-full object-contain opacity-60" />
+          <img src="/art/5.png" alt="" className="w-full h-full object-contain opacity-60" />
         </motion.div>
 
         {/* Bottom Border */}
@@ -155,7 +155,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.7, scale: 1, rotate: 15 }}
           transition={{ duration: 1, delay: 1.7 }}
         >
-          <img src="/6.png" alt="" className="w-full h-full object-contain opacity-70" />
+          <img src="/art/6.png" alt="" className="w-full h-full object-contain opacity-70" />
         </motion.div>
         <motion.div
           className="absolute bottom-4 left-28 w-12 h-12"
@@ -163,7 +163,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.6, scale: 1, rotate: -10 }}
           transition={{ duration: 1, delay: 2.0 }}
         >
-          <img src="/7.png" alt="" className="w-full h-full object-contain opacity-65" />
+          <img src="/art/7.png" alt="" className="w-full h-full object-contain opacity-65" />
         </motion.div>
         <motion.div
           className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-11 h-11"
@@ -171,7 +171,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.5, scale: 1, rotate: 8 }}
           transition={{ duration: 1, delay: 2.3 }}
         >
-          <img src="/8.png" alt="" className="w-full h-full object-contain opacity-60" />
+          <img src="/art/8.png" alt="" className="w-full h-full object-contain opacity-60" />
         </motion.div>
         <motion.div
           className="absolute bottom-6 right-8 w-16 h-16"
@@ -179,7 +179,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.8, scale: 1, rotate: 5 }}
           transition={{ duration: 1, delay: 1.6 }}
         >
-          <img src="/1.png" alt="" className="w-full h-full object-contain opacity-80" />
+          <img src="/art/1.png" alt="" className="w-full h-full object-contain opacity-80" />
         </motion.div>
         <motion.div
           className="absolute bottom-10 right-28 w-11 h-11"
@@ -187,7 +187,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.5, scale: 1, rotate: -15 }}
           transition={{ duration: 1, delay: 2.1 }}
         >
-          <img src="/2.png" alt="" className="w-full h-full object-contain opacity-60" />
+          <img src="/art/2.png" alt="" className="w-full h-full object-contain opacity-60" />
         </motion.div>
 
         {/* Left Side Decorations */}
@@ -197,7 +197,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.4, scale: 1, rotate: 20 }}
           transition={{ duration: 1, delay: 2.2 }}
         >
-          <img src="/3.png" alt="" className="w-full h-full object-contain opacity-50" />
+          <img src="/art/3.png" alt="" className="w-full h-full object-contain opacity-50" />
         </motion.div>
         <motion.div
           className="absolute top-1/3 left-2 w-8 h-8"
@@ -205,7 +205,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.35, scale: 1, rotate: -18 }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          <img src="/4.png" alt="" className="w-full h-full object-contain opacity-45" />
+          <img src="/art/4.png" alt="" className="w-full h-full object-contain opacity-45" />
         </motion.div>
         <motion.div
           className="absolute top-1/2 left-3 w-8 h-8"
@@ -213,7 +213,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.3, scale: 1, rotate: 30 }}
           transition={{ duration: 1, delay: 2.4 }}
         >
-          <img src="/5.png" alt="" className="w-full h-full object-contain opacity-40" />
+          <img src="/art/5.png" alt="" className="w-full h-full object-contain opacity-40" />
         </motion.div>
         <motion.div
           className="absolute top-2/3 left-4 w-9 h-9"
@@ -221,7 +221,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.4, scale: 1, rotate: -16 }}
           transition={{ duration: 1, delay: 2.7 }}
         >
-          <img src="/6.png" alt="" className="w-full h-full object-contain opacity-50" />
+          <img src="/art/6.png" alt="" className="w-full h-full object-contain opacity-50" />
         </motion.div>
         <motion.div
           className="absolute top-3/4 left-2 w-7 h-7"
@@ -229,7 +229,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.3, scale: 1, rotate: 25 }}
           transition={{ duration: 1, delay: 3.0 }}
         >
-          <img src="/7.png" alt="" className="w-full h-full object-contain opacity-40" />
+          <img src="/art/7.png" alt="" className="w-full h-full object-contain opacity-40" />
         </motion.div>
 
         {/* Right Side Decorations */}
@@ -239,7 +239,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.35, scale: 1, rotate: -30 }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          <img src="/8.png" alt="" className="w-full h-full object-contain opacity-45" />
+          <img src="/art/8.png" alt="" className="w-full h-full object-contain opacity-45" />
         </motion.div>
         <motion.div
           className="absolute top-1/3 right-2 w-8 h-8"
@@ -247,7 +247,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.3, scale: 1, rotate: 18 }}
           transition={{ duration: 1, delay: 2.6 }}
         >
-          <img src="/1.png" alt="" className="w-full h-full object-contain opacity-40" />
+          <img src="/art/1.png" alt="" className="w-full h-full object-contain opacity-40" />
         </motion.div>
         <motion.div
           className="absolute top-1/2 right-3 w-10 h-10"
@@ -255,7 +255,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.4, scale: 1, rotate: -20 }}
           transition={{ duration: 1, delay: 2.3 }}
         >
-          <img src="/2.png" alt="" className="w-full h-full object-contain opacity-50" />
+          <img src="/art/2.png" alt="" className="w-full h-full object-contain opacity-50" />
         </motion.div>
         <motion.div
           className="absolute top-2/3 right-3 w-10 h-10"
@@ -263,7 +263,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.4, scale: 1, rotate: -25 }}
           transition={{ duration: 1, delay: 2.8 }}
         >
-          <img src="/3.png" alt="" className="w-full h-full object-contain opacity-50" />
+          <img src="/art/3.png" alt="" className="w-full h-full object-contain opacity-50" />
         </motion.div>
         <motion.div
           className="absolute top-3/4 right-2 w-7 h-7"
@@ -271,7 +271,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.3, scale: 1, rotate: 15 }}
           transition={{ duration: 1, delay: 3.1 }}
         >
-          <img src="/4.png" alt="" className="w-full h-full object-contain opacity-40" />
+          <img src="/art/4.png" alt="" className="w-full h-full object-contain opacity-40" />
         </motion.div>
 
         {/* Middle Area Small Decorations */}
@@ -281,7 +281,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.25, scale: 1, rotate: 10 }}
           transition={{ duration: 1, delay: 3.2 }}
         >
-          <img src="/5.png" alt="" className="w-full h-full object-contain opacity-30" />
+          <img src="/art/5.png" alt="" className="w-full h-full object-contain opacity-30" />
         </motion.div>
         <motion.div
           className="absolute top-1/3 right-1/4 w-6 h-6"
@@ -289,7 +289,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.25, scale: 1, rotate: -10 }}
           transition={{ duration: 1, delay: 3.3 }}
         >
-          <img src="/6.png" alt="" className="w-full h-full object-contain opacity-30" />
+          <img src="/art/6.png" alt="" className="w-full h-full object-contain opacity-30" />
         </motion.div>
         <motion.div
           className="absolute bottom-1/4 left-1/4 w-6 h-6"
@@ -297,7 +297,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.25, scale: 1, rotate: 15 }}
           transition={{ duration: 1, delay: 3.4 }}
         >
-          <img src="/7.png" alt="" className="w-full h-full object-contain opacity-30" />
+          <img src="/art/7.png" alt="" className="w-full h-full object-contain opacity-30" />
         </motion.div>
         <motion.div
           className="absolute bottom-1/3 right-1/4 w-6 h-6"
@@ -305,7 +305,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.25, scale: 1, rotate: -18 }}
           transition={{ duration: 1, delay: 3.5 }}
         >
-          <img src="/8.png" alt="" className="w-full h-full object-contain opacity-30" />
+          <img src="/art/8.png" alt="" className="w-full h-full object-contain opacity-30" />
         </motion.div>
 
         {/* Additional scattered decorations */}
@@ -315,7 +315,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.2, scale: 1, rotate: 20 }}
           transition={{ duration: 1, delay: 3.6 }}
         >
-          <img src="/1.png" alt="" className="w-full h-full object-contain opacity-25" />
+          <img src="/art/1.png" alt="" className="w-full h-full object-contain opacity-25" />
         </motion.div>
         <motion.div
           className="absolute top-20 right-1/3 w-5 h-5"
@@ -323,7 +323,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.2, scale: 1, rotate: -20 }}
           transition={{ duration: 1, delay: 3.7 }}
         >
-          <img src="/2.png" alt="" className="w-full h-full object-contain opacity-25" />
+          <img src="/art/2.png" alt="" className="w-full h-full object-contain opacity-25" />
         </motion.div>
         <motion.div
           className="absolute bottom-20 left-1/3 w-5 h-5"
@@ -331,7 +331,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.2, scale: 1, rotate: 25 }}
           transition={{ duration: 1, delay: 3.8 }}
         >
-          <img src="/3.png" alt="" className="w-full h-full object-contain opacity-25" />
+          <img src="/art/3.png" alt="" className="w-full h-full object-contain opacity-25" />
         </motion.div>
         <motion.div
           className="absolute bottom-20 right-1/3 w-5 h-5"
@@ -339,7 +339,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           animate={{ opacity: 0.2, scale: 1, rotate: -25 }}
           transition={{ duration: 1, delay: 3.9 }}
         >
-          <img src="/4.png" alt="" className="w-full h-full object-contain opacity-25" />
+          <img src="/art/4.png" alt="" className="w-full h-full object-contain opacity-25" />
         </motion.div>
       </>
 
@@ -352,7 +352,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
       >
         <div className="relative">
           <img 
-            src="/art.png" 
+            src="/art/art.png" 
             alt="ART" 
             className="h-[20rem] w-auto object-contain opacity-80"
             style={{
@@ -435,7 +435,7 @@ export default function MainMenu({ onNavigate }: MainMenuProps) {
           className="mt-16 flex justify-center"
         >
           <img 
-            src="/logo.png" 
+            src="/art/logo.png" 
             alt="HOME & HOTEL 立詠建設" 
             className="h-24 w-auto object-contain filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300"
           />
